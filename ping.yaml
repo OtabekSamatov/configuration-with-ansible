@@ -6,6 +6,6 @@
   connection: ssh 
   ignore_errors: false  
   tasks: 
-  - name: Task Name Here 
-    ping: 
+    - name: Task Name Here 
+      ping: 
     
