@@ -2,7 +2,7 @@
 - name: Installs wordpress
   hosts: localhost
   become: yes
-  become_method: sudo
+  become_user: sudo
   tasks:
     - name: Install necessary packages
       package:
@@ -35,12 +35,12 @@
         dest: "/var/www/html"
         remote_src: yes
       become: yes
-      become_method: sudo
+      become_user: sudo
 
     - name: Move files to html folder
       shell: "mv /var/www/html/wordpress/* /var/www/html"
       become: yes
-      become_method: sudo
+      become_user: sudo
       ignore_errors: yes
 
     - name: Restart httpd
@@ -49,4 +49,4 @@
         state: restarted  
         enabled: yes
       become: yes
-      become_method: sudo
+      become_user: sudo
