@@ -1,12 +1,15 @@
 ---
-- name: creates ec2 instances
+- name: Create ec2-instance
   hosts: localhost
+  gather_facts: False
   tasks:
-    - name: create instances 
+    - name: Launch instance
       ec2:
-        key_name: "{{key_name}}"
-        instance_type: "{{instance_type}}"
-        image: "{{image}}"
-        count: "{{count}}"
-        vpc_subnet_id: "{{vpc_subnet_id}}"
-        region: "{{region}}"
+         key_name: "{{ keypair }}"
+         instance_type: "{{ instance_type }}"
+         image: "{{ image }}"
+         wait: true
+         region: "{{ region }}"
+         vpc_subnet_id: "{{ vpc_subnet_id }}"
+         assign_public_ip: yes
+      register: ec2
