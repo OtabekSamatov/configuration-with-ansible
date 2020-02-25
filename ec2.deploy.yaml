@@ -1,8 +1,8 @@
 ---
-- name: Create ec2 instance
-  hosts: localhost 
+- name: creates ec2 instances
+  hosts: localhost
   tasks:
-    - name: Create instances 
+    - name: create instances 
       ec2:
         key_name: "{{key_name}}"
         instance_type: "{{instance_type}}"
