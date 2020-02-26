@@ -1,0 +1,22 @@
+---
+- name: Playbook for sec groups
+  hosts: localhost
+  tasks:
+    - name: Create Security  Group
+      ec2_group:
+        name: SecGroup
+        description: Sec Group 
+        vpc_id: "{{vpc_id}}"
+        region: us-east-1
+        rules:
+          - proto: tcp
+            ports:
+            - 80
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            ports:
+            - 22
+            - 80
+            - 443
+            - 1167
+            cidr_ip: 0.0.0.0/0
