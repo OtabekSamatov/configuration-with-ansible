@@ -7,7 +7,7 @@
         name: SecGroup
         description: Sec Group 
         vpc_id: "{{vpc_id}}"
-        region: us-east-1
+        region: "{{region}}"
         rules:
           - proto: tcp
             ports:
