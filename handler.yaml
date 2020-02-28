@@ -15,7 +15,7 @@
     - name: Install mysql
       package: 
         name: mariadb-server
-        state: prresent 
+        state: present 
       notify: MYSQL RESTART 
 
   handlers:
