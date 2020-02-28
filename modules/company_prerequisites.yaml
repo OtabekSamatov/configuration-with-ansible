@@ -3,8 +3,8 @@
   hosts: all
   become: true
   become_method: sudo
-  connection: ssh 
-  ignore_errors: false  
-  roles: 
-    - { role: company_prerequisites }
+  connection: ssh
+  ignore_errors: false
+  roles:
+    - {role: company_prerequisites}
     
